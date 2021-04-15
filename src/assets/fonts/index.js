@@ -1,10 +1,10 @@
 const customFonts = {
-    PoppinsBold: require("../../assets/fonts/Poppins-Bold.ttf"),
-    PoppinsExtraBold: require("../../assets/fonts/Poppins-ExtraBold.ttf"),
-    PoppinsMedium: require("../../assets/fonts/Poppins-Medium.ttf"),
-    PoppinsRegular: require("../../assets/fonts/Poppins-Regular.ttf"),
-    PoppinsSemiBold: require("../../assets/fonts/Poppins-SemiBold.ttf"),
-    PoppinsThin: require("../../assets/fonts/Poppins-Thin.ttf"),
+    PoppinsBold: require("./Poppins-Bold.ttf"),
+    PoppinsExtraBold: require("./Poppins-ExtraBold.ttf"),
+    PoppinsMedium: require("./Poppins-Medium.ttf"),
+    PoppinsRegular: require("./Poppins-Regular.ttf"),
+    PoppinsSemiBold: require("./Poppins-SemiBold.ttf"),
+    PoppinsThin: require("./Poppins-Thin.ttf"),
   };
   
   export default customFonts;
