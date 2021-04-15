@@ -18,7 +18,7 @@ export default function PieChart({
   percentage = 0,
   radius = 40,
   strokeWidth = 10,
-  duration = 500,
+  duration = 100,
   color = "tomato",
   textColor,
   max = 0

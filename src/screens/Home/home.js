@@ -8,8 +8,9 @@ import Scroll from '../../components/scroll'
 
 //importing data
 import TrendingData from '../../assets/data/HomeTrendingData'
+import DailyData from '../../assets/data/dailydata'
 import { heightToDp, widthToDp } from '../../Utils';
-import PieChart from '../../components/pieChart';
+import DailyCard from '../../components/dailyCard';
 
 const Home = () => {
     return (
@@ -17,7 +18,7 @@ const Home = () => {
             <ScrollView style={{paddingHorizontal: widthToDp('2%'), top: heightToDp('2%')}}>
                 <Hedder/>
                 <Scroll title={"TRENDING"} data={TrendingData} />
-                <PieChart percentage={1024} max={2030} color={colours.primary} radius={widthToDp('12%')} />
+                <DailyCard data={DailyData}/>
             </ScrollView>
         </SafeAreaView>
     );
