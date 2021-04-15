@@ -1,38 +1,44 @@
 const recents = [
     {
         Title : 'Full Body',
-        subTitle : 'Beginner',
+        difficulty : 'Beginner',
         image : 'teju your work idk',
+        units : '20',
         key : '1'
     },
     {
         Title : 'Upper Body',
-        subTitle : 'Beginner',
+        difficulty : 'Beginner',
         image : 'teju your work idk',
+        units : '12',
         key : '2'
     },
     {
         Title : 'Full Body',
-        subTitle : 'Intermediet',
+        difficulty : 'Intermediet',
         image : 'teju your work idk',
+        units : '25',
         key : '3'
     },
     {
         Title : 'Upper Body',
-        subTitle : 'Advance',
+        difficulty : 'Advance',
         image : 'teju your work idk',
+        units : '14',
         key : '4'
     },
     {
         Title : 'shit',
-        subTitle : 'Advance pro max',
+        difficulty : 'Advance pro max',
         image : 'teju your work idk',
+        units : '26',
         key : '5'
     },  
     {
         Title : 'blah blah',
-        subTitle : 'noob',
+        difficulty : 'noob',
         image : 'teju your work idk',
+        units : '21',
         key : '6'
     },  
 ]
