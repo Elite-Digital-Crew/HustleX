@@ -4,7 +4,8 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import colours from './src/assets/colours/colours';
+import Navigation from './src/navigations/index';
+
 import Font from './src/assets/fonts/index';
 
 export default function App() {
@@ -12,19 +13,5 @@ export default function App() {
     if (!isLoading) {
         return <AppLoading />
     }
-    return (
-        <View style={styles.container}>
-        <Text style={{fontFamily: "PoppinsBold", fontSize: 30 }}>New App</Text>
-        <StatusBar style="auto" />
-        </View>
-    );
+    return <Navigation/>
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colours.secondary ,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
