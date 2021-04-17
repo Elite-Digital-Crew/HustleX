@@ -1,28 +1,30 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, ScrollView, FlatList } from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
 
-import colours from '../assets/colours/colours';
+
 import { heightToDp, widthToDp } from '../Utils';
+import colours from '../assets/colours/colours';
 
-
-
-const verticalScroll = ({navigation, data, title}) => {
-    return (
-        <View>
+export default function blogHeroCard({ navigation, data, title }) {
+    return(
+        <View style={{
+            marginTop: heightToDp('3%')
+        }}>
             <Text style={{
+                color: colours.text,
                 fontFamily: "PoppinsSemiBold",
-                fontSize: widthToDp('8%'),
-                left: widthToDp('2%'),
-                color: colours.text
+                fontSize: widthToDp('6%'),
             }}>{title}</Text>
-            <FlatList
-            showsVerticalScrollIndicator= {false}
+            <FlatList 
+            showsHorizontalScrollIndicator={false}
             data={data}
             horizontal={false}
+            keyExtractor={item => item.id.toString()}
             renderItem={({item}) => (
-                <TouchableOpacity
-                    // onPress={() => navigation.push('BlogDetails', {data: item})}
-                    >
+                <ScrollView horizontal={false}>
+                    <TouchableOpacity
+                    onPress={() => navigation.push('BlogDetails', {data: item})}>
                     <View style={{
                         marginBottom: heightToDp('1%'),
                         backgroundColor: colours.grey,
@@ -48,7 +50,9 @@ const verticalScroll = ({navigation, data, title}) => {
                             marginHorizontal: widthToDp('4%')
                         }}
                         />
-                        <View>
+                        <View style={{
+                            // marginLeft: widthToDp('2%')
+                        }}>
                             <Text style={{
                                 color: colours.secondary,
                                 fontFamily: "PoppinsBold",
@@ -68,10 +72,8 @@ const verticalScroll = ({navigation, data, title}) => {
                         </View>
                     </View>
                     </TouchableOpacity>
-            )}
-            />
+                </ScrollView>
+            )}/>
         </View>
     );
 }
-
-export default verticalScroll;
