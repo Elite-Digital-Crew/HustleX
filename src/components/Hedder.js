@@ -12,8 +12,8 @@ const Hedder = () => {
             flexDirection: 'row',
             justifyContent: 'space-between',
             alignItems: 'center',
-            paddingHorizontal: widthToDp('8%'),
-            backgroundColor: colours.primary
+            paddingHorizontal: widthToDp('3%'),
+            // backgroundColor: colours.primary
         }}>
             <AntDesign name="search1" size={widthToDp('5%')} color= {colours.text}/>
             <Image

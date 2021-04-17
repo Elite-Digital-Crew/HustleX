@@ -5,9 +5,8 @@ import { View, Text, FlatList, ImageBackground } from 'react-native';
 //styling elements
 import colours from '../assets/colours/colours';
 import { heightToDp, widthToDp } from '../Utils';
-import Difficulty from './difficulty';
 
-const Card = ({Title, Units}) => {
+const Card = ({Title, Units, Difficulty}) => {
     return(
         <View style={{
             // width: widthToDp('45%'),
@@ -28,18 +27,26 @@ const Card = ({Title, Units}) => {
                 <View style={{
                     position: 'absolute',
                     bottom: heightToDp('1%'),
-                    left: widthToDp('2%')
+                    left: widthToDp('2.5%'),
                 }}>
                     <Text style={{
                     fontFamily: "PoppinsSemiBold",
                     fontSize: widthToDp('6%'),
                     textAlign: 'center',
+                    bottom: heightToDp('-1%'),
                     textTransform: 'uppercase',
                     color: colours.white ,
                     }}>{Title}</Text>
+
                     <Text style={{
                     fontFamily: "PoppinsMedium",
-                    fontSize: widthToDp('3%'),
+                    fontSize: widthToDp('2.5%'),
+                    textTransform: 'uppercase',
+                    color: colours.white ,
+                    }}>{Difficulty}</Text>
+                    <Text style={{
+                    fontFamily: "PoppinsMedium",
+                    fontSize: widthToDp('2.5%'),
                     color: colours.white ,
                     }}>{Units} Excercises</Text>
                 </View>
@@ -55,7 +62,8 @@ const scroll = ({title, data}) => {
         }}>
             <Text style={{
                 fontFamily: "PoppinsSemiBold",
-                fontSize: widthToDp('6%'),
+                fontSize: widthToDp('8%'),
+                left: widthToDp('2%'),
                 color: colours.text
             }}>{title}</Text>
 
@@ -64,7 +72,7 @@ const scroll = ({title, data}) => {
             data={data}
             showsHorizontalScrollIndicator={false}
             renderItem= {({item}) => (
-                <Card Title={item.Title} Units={item.units} />
+                <Card Title={item.Title} Units={item.units} Difficulty={item.difficulty} />
             )}
             />
         </View>
