@@ -29,7 +29,7 @@ const recents = [
     },
     {
         Title : 'shit',
-        difficulty : 'Advance pro',
+        difficulty : 'Advance pro max',
         image : 'teju your work idk',
         units : '26',
         key : '5'

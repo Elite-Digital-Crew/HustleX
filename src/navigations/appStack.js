@@ -1,7 +1,7 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 //importing Auth screens
-import Home from '../screens/Home/home';
+import Home from '../screens/Home/index';
 
 
 //createing stack navigator

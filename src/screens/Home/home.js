@@ -11,18 +11,13 @@ import TrendingData from '../../assets/data/HomeTrendingData'
 import DailyData from '../../assets/data/dailydata'
 import { heightToDp, widthToDp } from '../../Utils';
 import DailyCard from '../../components/dailyCard';
-import VerticalScroll from '../../components/verticalScroll';
-import blogpopular from '../../assets/data/BlogPopular';
 
-const Home = () => {
+const Home = ({ navigation }) => {
     return (
         <SafeAreaView>
-            <ScrollView 
-            style={{paddingHorizontal: widthToDp('3%'), top: heightToDp('2%')}}
-            horizontal={false}>
+            <ScrollView style={{paddingHorizontal: widthToDp('3%'), top: heightToDp('2%')}}>
                 <Hedder/>
-                <Scroll title={"TRENDING"} data={TrendingData} />
-                {/* <VerticalScroll title={"BLOG"} data={blogpopular}/> */}
+                <Scroll title={"TRENDING"} data={TrendingData} navigation={navigation}/>
                 <DailyCard data={DailyData}/>
             </ScrollView>
         </SafeAreaView>

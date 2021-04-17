@@ -1,14 +1,16 @@
 import React from 'react';
-import { View, Text, FlatList, ImageBackground } from 'react-native';
+import { View, Text, FlatList, ImageBackground, TouchableWithoutFeedback } from 'react-native';
 
 
 //styling elements
 import colours from '../assets/colours/colours';
 import { heightToDp, widthToDp } from '../Utils';
+import Difficulty from './difficulty';
 
-const Card = ({Title, Units, Difficulty}) => {
+const Card = ({Title, Units, Difficulty, Navigation, data}) => {
     return(
-        <View style={{
+        <TouchableWithoutFeedback onPress={() => Navigation.push('HomeDetails', {data: data})}>
+            <View style={{
             // width: widthToDp('45%'),
             // height: heightToDp('30%'),
             justifyContent: 'center',
@@ -52,18 +54,18 @@ const Card = ({Title, Units, Difficulty}) => {
                 </View>
             </ImageBackground>
         </View>
+        </TouchableWithoutFeedback>
     )
 }
 
-const scroll = ({title, data}) => {
+const scroll = ({title, data, navigation}) => {
     return (
         <View style={{
             marginVertical: heightToDp('2%')
         }}>
             <Text style={{
                 fontFamily: "PoppinsSemiBold",
-                fontSize: widthToDp('8%'),
-                left: widthToDp('2%'),
+                fontSize: widthToDp('6%'),
                 color: colours.text
             }}>{title}</Text>
 
@@ -72,7 +74,7 @@ const scroll = ({title, data}) => {
             data={data}
             showsHorizontalScrollIndicator={false}
             renderItem= {({item}) => (
-                <Card Title={item.Title} Units={item.units} Difficulty={item.difficulty} />
+                <Card Title={item.Title} Units={item.units} Difficulty={item.difficulty} Navigation={navigation} data={item} />
             )}
             />
         </View>
