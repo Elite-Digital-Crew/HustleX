@@ -1,19 +1,9 @@
+import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Text, View } from 'react-native';
 
 import Index from './index';
 
-import { NavigationContainer, DarkTheme } from '@react-navigation/native';
 
-
-const App = () => {
-  return (
-      <NavigationContainer 
-      // theme={DarkTheme}
-      >
-        <Index />
-      </NavigationContainer>
-  );
+export default function App() {
+  return ( <Index /> );
 }
-
-export default App;
