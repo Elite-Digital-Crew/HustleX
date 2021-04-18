@@ -19,7 +19,7 @@ const BlogDetails = props => {
                     source={{uri: data.image}}
                     imageStyle={{
                         borderBottomLeftRadius: 30,
-                        borderBottomRightRadius: 30
+                        borderBottomRightRadius: 30,
                     }}
                     style={{
                         width: widthToDp('100%'),

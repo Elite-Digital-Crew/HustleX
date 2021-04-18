@@ -65,7 +65,7 @@ const scroll = ({title, data, navigation}) => {
         }}>
             <Text style={{
                 fontFamily: "PoppinsSemiBold",
-                fontSize: widthToDp('6%'),
+                fontSize: widthToDp('8%'),
                 color: colours.text
             }}>{title}</Text>
 

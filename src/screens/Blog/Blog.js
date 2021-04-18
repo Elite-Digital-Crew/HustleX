@@ -22,14 +22,14 @@ export default function Blog({ navigation }) {
             <Hedder/>
                 <View>
                     <Text style={{
-                            fontFamily: "PoppinsSemiBold",
-                            fontSize: widthToDp('6%'),
-                            color: colours.text,
-                            marginTop: heightToDp('6%')
-                        }}>HEY ALEX!</Text>  
+                        fontFamily: "PoppinsBold",
+                        fontSize: widthToDp('10%'),
+                        marginVertical: heightToDp('1%'),
+                        color: colours.text,
+                        bottom: heightToDp('-4%'),
+                        marginTop: heightToDp('2%')
+                    }}>HEY ALEX!!</Text>
                 </View>
-                {/* <Blogherocard data={herodata} /> */}
-
                 <View style={{marginVertical: heightToDp('2%')}}>
                     
                     <Blogherocard 

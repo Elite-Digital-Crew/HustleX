@@ -17,8 +17,16 @@ const Home = ({ navigation }) => {
         <SafeAreaView>
             <ScrollView style={{paddingHorizontal: widthToDp('3%'), top: heightToDp('2%')}}>
                 <Hedder/>
+                <Text style={{
+                    fontFamily: "PoppinsBold",
+                    fontSize: widthToDp('10%'),
+                    marginVertical: heightToDp('1%'),
+                    color: colours.text,
+                    bottom: heightToDp('-4%'),
+                    marginTop: heightToDp('2%')
+                }}>HEY ALEX!!</Text>
                 <Scroll title={"TRENDING"} data={TrendingData} navigation={navigation}/>
-                <DailyCard data={DailyData}/>
+                <DailyCard data={DailyData} title={"TODAY"}/>
             </ScrollView>
         </SafeAreaView>
     );

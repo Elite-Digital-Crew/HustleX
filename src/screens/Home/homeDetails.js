@@ -7,67 +7,76 @@ import colours from '../../assets/colours/colours';
 const homeDetails = props => {
     const {data} = props.route.params;
     return (
-        <SafeAreaView  style={{alignItems: 'center', top: heightToDp('4%'), backgroundColor: colours.background}}>
+        <SafeAreaView  style={{alignItems: 'center', backgroundColor: colours.background}}>
             <ScrollView>
-                <Image 
-                source={require('../../assets/images/test.png')}
-                style={{
-                    width: widthToDp('90%'),
-                    height: heightToDp('30%'),
-                    borderRadius: widthToDp('5%')
-                }}/>
-                <View style={{
-                    width: widthToDp('90%'),
-                    marginTop : heightToDp('2%'),
-                    height: heightToDp('16%'),
-                    borderRadius: widthToDp('4%'),
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    backgroundColor: colours.grey
-                }}>
-                    <Text style={{
-                        fontFamily: "PoppinsBold",
-                        color: colours.text,
-                        fontSize: widthToDp('6%'),
-                        textTransform: 'uppercase',
-                    }}>{data.Title}</Text>
+                <View style={{alignItems:'center'}}>
+                    <Image 
+                    source={require('../../assets/images/test.png')}
+                    style={{
+                        width: widthToDp('100%'),
+                        height: heightToDp('35%'),
+                        borderBottomLeftRadius: 30,
+                        borderBottomRightRadius: 30,
+                    }}/>
+                    <TouchableOpacity 
+                        onPress={() => props.navigation.goBack()}
+                        style={{position: 'absolute', top: 40, left: 20}}
+                        >
+                            <AntDesign name="left" size={widthToDp('6%')} color="white" />
+                        </TouchableOpacity>
                     <View style={{
-                        flexDirection: 'row',
-                        width: '80%',
-                        justifyContent: 'space-between'
+                        width: widthToDp('90%'),
+                        marginTop : heightToDp('2%'),
+                        height: heightToDp('16%'),
+                        borderRadius: widthToDp('4%'),
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        backgroundColor: colours.grey
                     }}>
                         <Text style={{
                             fontFamily: "PoppinsBold",
-                            color: colours.secondary,
-                            fontSize: widthToDp('4.5%'),
-                            textAlign: 'center',
-                        }}>WORKOUTS</Text>
-                        <Text style={{
-                            fontFamily: "PoppinsBold",
-                            color: colours.secondary,
-                            fontSize: widthToDp('4.5%'),
-                            textAlign: 'center',
-                        }}>DIFFICULTY</Text>
-                    </View>
-                    <View style={{
-                        flexDirection: 'row',
-                        width: '80%',
-                        justifyContent: 'space-between'
-                    }}>
-                        <Text style={{
-                            fontFamily: "PoppinsBold",
-                            color: colours.primary,
-                            fontSize: widthToDp('4%'),
-                            textAlign: 'center',
-                            width: widthToDp('25%')
-                        }}>{data.units}</Text>
-                        <Text style={{
-                            fontFamily: "PoppinsBold",
-                            color: colours.primary,
-                            fontSize: widthToDp('4%'),
-                            textAlign: 'center',
-                            width: widthToDp('25%')
-                        }}>{data.difficulty}</Text>
+                            color: colours.text,
+                            fontSize: widthToDp('6%'),
+                            textTransform: 'uppercase',
+                        }}>{data.Title}</Text>
+                        <View style={{
+                            flexDirection: 'row',
+                            width: '80%',
+                            justifyContent: 'space-between'
+                        }}>
+                            <Text style={{
+                                fontFamily: "PoppinsBold",
+                                color: colours.secondary,
+                                fontSize: widthToDp('4.5%'),
+                                textAlign: 'center',
+                            }}>WORKOUTS</Text>
+                            <Text style={{
+                                fontFamily: "PoppinsBold",
+                                color: colours.secondary,
+                                fontSize: widthToDp('4.5%'),
+                                textAlign: 'center',
+                            }}>DIFFICULTY</Text>
+                        </View>
+                        <View style={{
+                            flexDirection: 'row',
+                            width: '80%',
+                            justifyContent: 'space-between'
+                        }}>
+                            <Text style={{
+                                fontFamily: "PoppinsBold",
+                                color: colours.primary,
+                                fontSize: widthToDp('4%'),
+                                textAlign: 'center',
+                                width: widthToDp('25%')
+                            }}>{data.units}</Text>
+                            <Text style={{
+                                fontFamily: "PoppinsBold",
+                                color: colours.primary,
+                                fontSize: widthToDp('4%'),
+                                textAlign: 'center',
+                                width: widthToDp('25%')
+                            }}>{data.difficulty}</Text>
+                        </View>
                     </View>
                 </View>
             </ScrollView>
