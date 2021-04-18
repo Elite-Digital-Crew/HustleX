@@ -13,7 +13,7 @@ const dailyCard = ({data, title}) => {
             fontSize: widthToDp('8%'),
             }}>{title}</Text> 
             <View style={{
-            height: heightToDp('25%'),
+            height: widthToDp('50%'),
             borderRadius: widthToDp('4%'),
             backgroundColor: colours.grey,
             flexDirection: 'row',
@@ -48,7 +48,11 @@ const dailyCard = ({data, title}) => {
                     justifyContent:'center',
                     alignItems: 'center',
                 }}>
-                    <PieChart percentage={data.steps} max={data.stepsTarget} color={colours.primary} radius={widthToDp('12%')} />
+                    <PieChart 
+                    incolor={colours.primary} 
+                    outcolor={colours.secondary}
+                    inpercentage= '75'
+                    outpercentage= '50' />
                 </View>
             </View>
         </View>

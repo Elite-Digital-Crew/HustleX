@@ -24,7 +24,7 @@ const Home = ({ navigation }) => {
                     color: colours.text,
                     bottom: heightToDp('-4%'),
                     marginTop: heightToDp('2%')
-                }}>HEY ALEX!!</Text>
+                }}>HEY PRABHU!!</Text>
                 <Scroll title={"TRENDING"} data={TrendingData} navigation={navigation}/>
                 <DailyCard data={DailyData} title={"TODAY"}/>
             </ScrollView>

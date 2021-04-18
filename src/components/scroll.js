@@ -24,7 +24,7 @@ const Card = ({Title, Units, Difficulty, Navigation, data}) => {
             imageStyle={{borderRadius: widthToDp('2%')}}
             style={{
                 width: widthToDp('45%'),
-                height: heightToDp('30%')
+                height: widthToDp('65%')
             }}>
                 <View style={{
                     position: 'absolute',

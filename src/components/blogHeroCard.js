@@ -1,6 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableWithoutFeedback, ImageBackground, TextInput, ScrollView, FlatList } from 'react-native';
-import { AntDesign } from '@expo/vector-icons';
+import { Text, View, TouchableWithoutFeedback, ImageBackground, ScrollView, FlatList } from 'react-native';
 
 
 import { heightToDp, widthToDp } from '../Utils';
@@ -34,7 +33,7 @@ export default function blogHeroCard({ navigation, data, title }) {
                             imageStyle={{ borderRadius: 16}}
                             style={{
                             width: widthToDp('80%'),
-                            height: heightToDp('40%'),
+                            height: widthToDp('80%'),
                         }}>
                             <Text style={{
                                 position: 'absolute',
