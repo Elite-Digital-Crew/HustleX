@@ -28,7 +28,7 @@ export default function Blog({ navigation }) {
                         color: colours.text,
                         bottom: heightToDp('-4%'),
                         marginTop: heightToDp('2%')
-                    }}>HEY ALEX!!</Text>
+                    }}>HEY PRABHU!!</Text>
                 </View>
                 <View style={{marginVertical: heightToDp('2%')}}>
                     
