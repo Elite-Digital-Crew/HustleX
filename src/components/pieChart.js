@@ -1,116 +1,148 @@
-import * as React from 'react';
-import {
-  Easing,
-  TextInput,
-  Animated,
-  Text,
-  View,
-  StyleSheet,
-} from 'react-native';
-import Constants from 'expo-constants';
-import Svg, { G, Circle, Rect } from 'react-native-svg';
-import colours from '../assets/colours/colours';
+import React, { useState } from "react";
+import { StyleSheet, View, Dimensions, Animated, Text } from "react-native";
+import Svg, { Circle, G } from "react-native-svg";
+import colours from "../assets/colours/colours";
+import { widthToDp } from "../Utils";
+
+const { width, height } = Dimensions.get("screen");
 
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
-const AnimatedTextInput = Animated.createAnimatedComponent(TextInput);
 
-export default function PieChart({
-  percentage = 0,
-  radius = 40,
-  strokeWidth = 10,
-  duration = 100,
-  color = "tomato",
-  textColor,
-  max = 0
-}) {
-  const animated = React.useRef(new Animated.Value(0)).current;
-  const circleRef = React.useRef();
-  const inputRef = React.useRef();
-  const circumference = 2 * Math.PI * radius;
-  const halfCircle = radius + strokeWidth;
+const PieChart = ({
+  inpercentage ,
+  outpercentage,
+  incolor = "tomato",
+  outcolor = "tomato",
+}) => {
+  const innerCircleRadius = 6;
+  const innerCircleFillPercentage = inpercentage;
+  const innerCirclePerimeter = 2 * Math.PI * innerCircleRadius;
+  const innerCircleStrokeDashOffset =
+    innerCirclePerimeter -
+    (innerCirclePerimeter * innerCircleFillPercentage) / 100;
 
-  const animation = (toValue) => {
-    return Animated.timing(animated, {
-      delay: 1000,
-      toValue,
-      duration,
-      useNativeDriver: true,
-      easing: Easing.out(Easing.ease)
-    }).start(() => {
-      animation(toValue === 0 ? percentage : percentage);
-    });
-  };
+  const outerCircleRadius = 9;
+  const outerCircleFillPercentage = outpercentage;
+  const outerCirclePerimeter = 2 * Math.PI * outerCircleRadius;
+  const outerCircleStrokeDashOffset =
+    outerCirclePerimeter -
+    (outerCirclePerimeter * outerCircleFillPercentage) / 100;
+
+  const [springValue] = useState(new Animated.Value(1.3));
+
+  const [innerCircleInitialFill] = useState(
+    new Animated.Value(innerCirclePerimeter)
+  );
+  const [outerCircleInitialFill] = useState(
+    new Animated.Value(outerCirclePerimeter)
+  );
 
   React.useEffect(() => {
-    animation(percentage);
-    animated.addListener((v) => {
-      const maxPerc = 100 * v.value / max;
-      const strokeDashoffset = circumference - (circumference * maxPerc) / 100;
-      if (inputRef?.current) {
-        inputRef.current.setNativeProps({
-          text: `${Math.round(v.value)}`,
-        });
-      }
-      if (circleRef?.current) {
-        circleRef.current.setNativeProps({
-          strokeDashoffset,
-        });
-      }
-    }, [max, percentage]);
-
-    return () => {
-      animated.removeAllListeners();
-    };
-  });
+    Animated.parallel([
+      Animated.timing(innerCircleInitialFill, {
+        toValue: innerCircleStrokeDashOffset,
+        duration: 1000,
+        useNativeDriver: false
+      }),
+      Animated.timing(outerCircleInitialFill, {
+        toValue: outerCircleStrokeDashOffset,
+        duration: 2000,
+         useNativeDriver: false
+      }),
+      Animated.spring(springValue, {
+        toValue: 1,
+        friction: 1,
+         useNativeDriver: false
+      })
+    ]).start()
+  }, []);
 
   return (
-    <View style={{ width: radius * 2, height: radius * 2 }}>
-      <Svg
-        height={radius * 2}
-        width={radius * 2}
-        viewBox={`0 0 ${halfCircle * 2} ${halfCircle * 2}`}>
-        <G
-          rotation="-90"
-          origin={`${halfCircle}, ${halfCircle}`}>
-          <Circle
-            ref={circleRef}
-            cx="50%"
-            cy="50%"
-            r={radius}
-            fill="transparent"
-            stroke={color}
-            strokeWidth={strokeWidth}
-            strokeLinecap="round"
-            strokeDashoffset={circumference}
-            strokeDasharray={circumference}
-          />
-          <Circle
-            cx="50%"
-            cy="50%"
-            r={radius}
-            fill="transparent"
-            stroke={color}
-            strokeWidth={strokeWidth}
-            strokeLinejoin="round"
-            strokeOpacity=".1"
-          />
-        </G>
-      </Svg>
-      <AnimatedTextInput
-        ref={inputRef}
-        underlineColorAndroid="transparent"
-        editable={false}
-        defaultValue="0"
-        style={[
-          StyleSheet.absoluteFillObject,
-          { fontSize: radius / 2, color: textColor ?? color },
-          styles.text,
-        ]}
-      />
+    <View style={styles.container}>
+      <View>
+        <Svg
+          viewBox={`0 0 50 50`}
+          width={width}
+          height={height / 2.5}
+          style={{
+            transform: [{ rotateZ: "-90deg" }],
+          }}
+        >
+          <G>
+            <Circle
+              cx="25"
+              cy="25"
+              r={outerCircleRadius}
+              fill="transparent"
+              // stroke={outcolor}
+              stroke="#fcb1e6"
+              strokeDasharray="0"
+              strokeDashoffset="30"
+              strokeWidth={1.3}
+            />
+            <AnimatedCircle
+              cx="25"
+              cy="25"
+              r={outerCircleRadius}
+              stroke={outcolor}
+              strokeDasharray={outerCirclePerimeter}
+              strokeDashoffset={outerCircleInitialFill}
+              strokeLinecap={"round"}
+              strokeWidth={1.3}
+            />
+            <Circle
+              cx="25"
+              cy="25"
+              r={innerCircleRadius}
+              fill="transparent"
+              // stroke={incolor}
+              stroke="#9fd0fd"
+              strokeDasharray="0"
+              strokeWidth={1.3}
+            />
+            <AnimatedCircle
+              cx="25"
+              cy="25"
+              r={innerCircleRadius}
+              stroke={incolor}
+              strokeDasharray={innerCirclePerimeter}
+              strokeDashoffset={innerCircleInitialFill}
+              strokeLinecap={"round"}
+              strokeWidth={1.3}
+            />
+          </G>
+        </Svg>
+        <View style={{
+          position: "absolute",
+          justifyContent: "center",
+          alignItems: "center",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+        }}>
+          <Text style={{
+            fontSize: widthToDp('4%'),
+            fontFamily: "PoppinsBold",
+            color: colours.text
+          }}>GOALS</Text>
+        </View>
+      </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  text: { fontWeight: '900', textAlign: 'center' },
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  image: {
+    width: 120,
+    height: 120,
+    borderRadius: width * 0.5,
+  },
 });
+
+export default PieChart;
