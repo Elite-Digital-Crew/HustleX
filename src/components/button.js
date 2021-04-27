@@ -1,7 +1,7 @@
 import React from 'react'
-import { Text, View, TouchableOpacity, TextInput, SafeAreaView, ScrollView } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 import colours from '../assets/colours/colours';
-import { heightToDp, widthToDp } from '../Utils';
+import { widthToDp } from '../Utils';
 
 const button = ({
     text = "text",
