@@ -3,16 +3,16 @@ import { Text, View, TouchableOpacity, TextInput, SafeAreaView, ScrollView } fro
 import colours from '../../assets/colours/colours';
 
 
-const Home = ({ navigation }) => {
+const Friends = ({ navigation }) => {
     return (
         <View style={{
             flex: 1,
             justifyContent: 'center',
             alignItems: 'center'
         }}>
-            <Text>Home</Text>
+            <Text>Friends</Text>
         </View>
     );
 }
 
-export default Home;
+export default Friends;
