@@ -4,9 +4,9 @@
     "slug": "HustleX",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./src/assets/app-assets/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./src/assets/app-assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -21,7 +21,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./src/assets/app-assets/adaptive-icon.png",
         "backgroundColor": "#F8F8FA"
       }
     },
