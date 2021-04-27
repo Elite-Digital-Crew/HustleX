@@ -3,51 +3,36 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from "@expo/vector-icons";
 
 import React from 'react';
-//importing Auth screens
-import Home from '../screens/Home/index';
-import Blog from '../screens/Blog/index';
 import colours from '../assets/colours/colours';
 import { widthToDp, heightToDp } from '../Utils';
+import { Image, View } from 'react-native';
+
+//importing screens
+import Home from '../screens/Home/home';
+import Discover from '../screens/Discover/discover';
+import Music from '../screens/Music/music';
+import Friends from '../screens/Friends/friends';
 
 
 //createing stack navigator
 const AppStack = createBottomTabNavigator();
 
 const AppIndex = () => {
-    return (
-    <AppStack.Navigator
-    screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
-          let iconName;
-
-          if (route.name === 'Home') {
-            iconName = focused
-              ? 'home'
-              : 'home-outline';
-          }else if (route.name === 'Cources') {
-            iconName = focused ? 'barbell' : 'barbell-outline';
-          } 
-          else if (route.name === 'Blog') {
-            iconName = focused ? 'newspaper' : 'newspaper-outline';
-          }
-          // You can return any component that you like here!
-          return <Ionicons name={iconName} size={size} color={color} />;
-        },
-      })}
-    tabBarOptions={{
-    activeTintColor: colours.text,
-    inactiveTintColor: colours.darkgrey,
-    style: {
-        backgroundColor: colours.grey,
-        borderTopEndRadius: widthToDp('4%'),
-        borderTopStartRadius: widthToDp('4%'),
-        borderColor: colours.grey,
-        height: heightToDp('6%'),
-    }}}>
-        <AppStack.Screen name="Home" component={Home}/>
-        <AppStack.Screen name="Blog" component={Blog}/>
-    </AppStack.Navigator>
-    );
+  return (
+  <AppStack.Navigator
+  tabBarOptions={{
+  activeTintColor: colours.text,
+  inactiveTintColor: colours.darkgrey,
+  style: {
+      backgroundColor: colours.background ,
+      height: heightToDp('6%'),
+  }}}>
+      <AppStack.Screen name="Home" component={Home}/>
+      <AppStack.Screen name="Discover" component={Discover}/>
+      <AppStack.Screen name="Music" component={Music}/>
+      <AppStack.Screen name="Friends" component={Friends}/>
+  </AppStack.Navigator>
+  );
 }
 
 // expoting stack
