@@ -5,6 +5,9 @@ import colours from '../../assets/colours/colours';
 import { heightToDp, widthToDp } from '../../Utils';
 import { MaterialIcons } from '@expo/vector-icons';
 
+// importing components 
+import Button from '../../components/button'
+
 const CreateProfile = ({navigation}) => {
   return (
     <View style={{
@@ -59,22 +62,12 @@ const CreateProfile = ({navigation}) => {
           style={styles.input} />
         </View>
 
-        <TouchableOpacity style={{
-            width: widthToDp('50%'),
-            height:heightToDp('8%'),
-            backgroundColor:colours.secondary,
-            justifyContent: 'center',
-            alignItems: 'center',
-            borderRadius: 100,
-            marginTop: heightToDp('2%'),
-        }} onPress={() => navigation.push("CreateProfile")}>
-            <Text style={{
-                fontFamily: 'PoppinsBold',
-                fontSize: widthToDp('5%'),
-                color: colours.white ,
-            }}> REGISTER</Text>
-        </TouchableOpacity>
-
+        <Button 
+            colour = {colours.secondary}
+            text = {"REGISTER"}
+            height = {heightToDp('8%')}
+            width = {widthToDp('55%')}
+        />
       </View>
     </View>
   );

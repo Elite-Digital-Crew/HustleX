@@ -14,10 +14,15 @@ import Button from '../../components/button'
 
 const register = ({ navigation }) => {
 
-    function navigateLogin() {
-        navigation.navigate("CreateProflie")
+    function navigateCreate() {
+        navigation.navigate("CreateProfile")
     } 
     return (
+      <View style={{
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center'
+      }}> 
         <View style={{
             flex: 1,
             alignItems: 'center',
@@ -89,6 +94,7 @@ const register = ({ navigation }) => {
                 text = {"REGISTER"}
                 height = {heightToDp('8%')}
                 width = {widthToDp('55%')}
+                onPress = {navigateCreate}
             />
       
               <Text style={{
@@ -130,6 +136,7 @@ const register = ({ navigation }) => {
             </View>
       
             </View>
+          </View>
           </View>
     );
 }

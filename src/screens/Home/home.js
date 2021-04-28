@@ -7,7 +7,6 @@ import { heightToDp, widthToDp } from '../../Utils';
 
 // importing components 
 import Button from '../../components/button'
-import Landing from '../Auth/createProflie'
 
 const Home = ({ navigation }) => {
  
@@ -17,7 +16,7 @@ const Home = ({ navigation }) => {
             justifyContent: 'center',
             alignItems: 'center'
         }}>
-            <Landing />
+            <Text>Home</Text>
         </View>
     );
 }
