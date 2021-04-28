@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View, TextInput, TouchableOpacity, Alert } from 'react-native';
+import * as Animatable from 'react-native-animatable';
 
 // styling components
 import colours from '../../assets/colours/colours';
@@ -13,11 +14,16 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import Button from '../../components/button'
 
 const Landing = ({ navigation }) => {
+    function buttonPress() {
+        console.log("button pressed");
+    }
 
-    function navigateLogin() {
-        navigation.navigate("Login")
-    } 
     return (
+        <View style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center'
+        }}> 
         <View style={{
             height: heightToDp('65%'),
             justifyContent: 'space-around',
@@ -37,6 +43,7 @@ const Landing = ({ navigation }) => {
                 <TextInput 
                 keyboardType='email-address'
                 placeholder= "Email"
+                onChangeText={(val) => textInputChange(val)}
                 style={{
                     height: heightToDp('8%'),
                     width: widthToDp('70%'),
@@ -72,7 +79,7 @@ const Landing = ({ navigation }) => {
                 text = {"LOGIN"}
                 height = {heightToDp('8%')}
                 width = {widthToDp('55%')}
-                onPress = {navigateLogin}
+                onPress = {buttonPress}
                 />
             </View>
             <Text style={{
@@ -110,6 +117,7 @@ const Landing = ({ navigation }) => {
                     <FontAwesome5 name="facebook-f" size={widthToDp('5%')} color="black" />
                 </TouchableOpacity>
             </View>
+        </View>
         </View>
     );
 }
