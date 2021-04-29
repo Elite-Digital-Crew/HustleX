@@ -7,8 +7,8 @@ import AuthStack from './authStack';
 const NavigationIndex = () => {
     return(
         <NavigationContainer>
-            <AuthStack />
-            {/* <AppStack /> */}
+            {/* <AuthStack /> */}
+            <AppStack />
         </NavigationContainer>
     );
 }
