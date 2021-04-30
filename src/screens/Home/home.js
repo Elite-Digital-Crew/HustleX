@@ -5,18 +5,18 @@ import { Text, View } from 'react-native';
 import colours from '../../assets/colours/colours';
 import { heightToDp, widthToDp } from '../../Utils';
 
+
 // importing components 
 import Button from '../../components/button'
+import Hedder from '../../components/hedder';
 
 const Home = ({ navigation }) => {
  
     return (
         <View style={{
             flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center'
         }}>
-            <Text>Home</Text>
+            <Hedder navigation={navigation}/>
         </View>
     );
 }

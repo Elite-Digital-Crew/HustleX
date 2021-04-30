@@ -1,4 +1,4 @@
-const blogdata = [
+export default const blogdata = [
     {
       id: 1,
       title: ' How to Make Exercise a Regular Habit in 6 Steps',
@@ -396,5 +396,3 @@ const blogdata = [
     With these workouts, aim to be as intense as possible during each movement because you have at least one minute of rest coming up between rounds. After you finish these workouts, be sure to bring your heart rate back down to a recovery range with some easy walking before you sit down to rest.
     One of the best things you can do for your overall health is to keep moving your body. So grab some friends (figuratively, not literally) and have them join you for this workout in the park."},
 ];
-
-export default blogdata;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View, TouchableOpacity, TextInput, SafeAreaView, ScrollView } from 'react-native';
 import colours from '../../assets/colours/colours';
+import Hedder from '../../components/hedder';
 
 
 const Music = ({ navigation }) => {
@@ -11,6 +12,7 @@ const Music = ({ navigation }) => {
             alignItems: 'center'
         }}>
             <Text>Music</Text>
+            <Hedder navigation={navigation}/>
         </View>
     );
 }
