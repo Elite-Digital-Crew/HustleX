@@ -9,10 +9,9 @@ const Hedder = ({navigation}) => {
     return (
         <View style={{
             height: heightToDp('7%'),
-            width: widthToDp('100%'),
             alignItems: 'center',
             justifyContent: 'space-between',
-            paddingHorizontal: widthToDp('8%'),
+            paddingHorizontal: widthToDp('4%'),
             flexDirection: 'row',
             backgroundColor: colours.primary
         }}>

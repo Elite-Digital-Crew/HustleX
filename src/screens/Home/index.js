@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from './home';
 // import HomeDetails from './homeDetails';
 import Profile from '../commonScreen/Profile';
+import BlogDetails from '../commonScreen/BlogDetails';
 
 const Stack = createStackNavigator()
 
@@ -16,6 +17,7 @@ export default function Index({ navigation }) {
          >
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Profile" component={Profile}/>
+          <Stack.Screen name="BlogDetails" component={BlogDetails}/>
          </Stack.Navigator>
       );
 } 
