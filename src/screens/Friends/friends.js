@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View, TouchableOpacity, TextInput, SafeAreaView, ScrollView } from 'react-native';
 import colours from '../../assets/colours/colours';
+import Hedder from '../../components/hedder';
 
 
 const Friends = ({ navigation }) => {
@@ -11,6 +12,7 @@ const Friends = ({ navigation }) => {
             alignItems: 'center'
         }}>
             <Text>Friends</Text>
+            <Hedder navigation={navigation}/>
         </View>
     );
 }
