@@ -7,17 +7,26 @@ import EventsData from '../assets/data/eventsData';
 import { heightToDp, widthToDp } from '../Utils';
 import colours from '../assets/colours/colours';
 
+const ITEM_SIZE = widthToDp('80%');
+const ITEM_PADDING = widthToDp('2%');
+
 const EventsScroll = ({navigation}) => {
     return (
         <View>
-            <Text>oindfovn</Text>
+            <Text style={{
+                color: colours.text,
+                left: '2%',
+                fontFamily: "PoppinsBold",
+                fontSize: widthToDp('6%'),
+            }}>EVENTS</Text>
             <FlatList 
             data={EventsData}
             horizontal
             keyExtractor={item => item.id.toString()}
             showsHorizontalScrollIndicator={false}
             renderItem={({item}) => (
-                <View>
+                <View style={{paddingRight: ITEM_PADDING}}>
+                    <TouchableOpacity onPress={() => navigation.navigate('EventsDetails', { item })}>
                     <ImageBackground
                         resizeMode="cover"
                         source={{uri: item.image}} 
@@ -74,7 +83,7 @@ const EventsScroll = ({navigation}) => {
                             </View>
                         </View>
                     </ImageBackground>
-                    
+                    </TouchableOpacity>
                 </View>   
             )}
             />
