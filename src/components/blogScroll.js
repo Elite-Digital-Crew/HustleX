@@ -21,9 +21,7 @@ const BlogScroll = ({navigation}) => {
             <FlatList 
             data={BlogData}
             showsHorizontalScrollIndicator={false}
-            keyExtractor={item => `item.${item.id}.title`.toString()}
-            snapToInterval={ITEM_SIZE + ITEM_PADDING}
-            decelerationRate={0}
+            keyExtractor={item => item.id.toString()}
             horizontal
             renderItem={({ item }) => (
                 <View style={{

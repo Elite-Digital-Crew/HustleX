@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, StatusBar, SafeAreaView, Image, Text, TouchableOpacity,} from 'react-native';
+import { View, StatusBar, SafeAreaView, Image, Text, TouchableOpacity, Alert} from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -8,6 +8,9 @@ import { heightToDp, widthToDp } from '../../Utils';
 import Button from '../../components/button'
 
 const EventsDetails = ({navigation, route}) => {
+    function buttonPress() {
+        Alert.alert("Ooops", "You can't Register in beta")
+    };
     const {item} = route.params;
     return (
         <View style={{
@@ -23,8 +26,8 @@ const EventsDetails = ({navigation, route}) => {
                     height : widthToDp('10%'),
                     justifyContent: 'center',
                     alignItems: 'center',
-                    top: 18,
-                    left: 16,
+                    top: 28,
+                    left: 22,
                 }}>
                     <Ionicons name="chevron-back-outline" size={widthToDp('10%')} color="black" />
                 </TouchableOpacity>
@@ -35,11 +38,12 @@ const EventsDetails = ({navigation, route}) => {
                 width: widthToDp('92%'),
                 // height: heightToDp('80%')
             }}>
-                <Image 
+                <Animatable.Image
+                animation={"fadeInUp"} 
                 source={{uri: item.image}}
                 style={{
                     width: widthToDp('86%'),
-                    height: heightToDp('50%'),
+                    height: heightToDp('42%'),
                     borderRadius: 26,
                     shadowColor: "#000",
                     shadowOffset: {
@@ -50,7 +54,9 @@ const EventsDetails = ({navigation, route}) => {
                     shadowRadius: 4.65,
                 }}
                 />
-                <View style={{
+                <Animatable.View
+                animation={"fadeInUp"}
+                style={{
                     top: '4%',
                     alignItems: 'center',
                     justifyContent: 'space-between',
@@ -73,8 +79,14 @@ const EventsDetails = ({navigation, route}) => {
                         fontFamily: "PoppinsMedium",
                         fontSize: widthToDp('3%'),
                     }}>{item.discription}</Text>
-                    <Button text={"REGISTER"} colour={colours.primary} width={widthToDp('36%')} height={widthToDp('12%')} />
-                </View>
+                    <Button 
+                    text={"REGISTER"} 
+                    colour={colours.primary} 
+                    width={widthToDp('32%')} 
+                    height={widthToDp('12%')} 
+                    FontSize={widthToDp('3%')}
+                    onPress={buttonPress} />
+                </Animatable.View>
             </View>
         </View>
     )
