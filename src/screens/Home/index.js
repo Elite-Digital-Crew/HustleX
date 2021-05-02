@@ -8,6 +8,7 @@ enableScreens();
 import Home from './home';
 import Profile from '../commonScreen/Profile';
 import BlogDetails from '../commonScreen/BlogDetails';
+import EventsDetails from '../commonScreen/EventsDetails';
 
 const Stack = createSharedElementStackNavigator()
 
@@ -21,6 +22,7 @@ export default function Index({ navigation }) {
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Profile" component={Profile}/>
           <Stack.Screen name="BlogDetails" component={BlogDetails}/>
+          <Stack.Screen name="EventsDetails" component={EventsDetails}/>
          </Stack.Navigator>
       );
 } 

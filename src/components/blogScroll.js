@@ -1,41 +1,45 @@
 import React from 'react';
 import { View, TouchableHighlight, ImageBackground, Image, Text, FlatList, TouchableOpacity } from 'react-native';
-import { SharedElement } from 'react-navigation-shared-element';
 
 //Data
 import BlogData from '../assets/data/blogData';
 import { heightToDp, widthToDp } from '../Utils';
 import colours from '../assets/colours/colours';
 
+const ITEM_SIZE = widthToDp('80%');
+const ITEM_PADDING = widthToDp('2%');
+
 const BlogScroll = ({navigation}) => {
     return (
         <View>
             <Text style={{
                 color: colours.text,
+                left: '2%',
                 fontFamily: "PoppinsBold",
-                fontSize: widthToDp('8%'),
+                fontSize: widthToDp('6%'),
             }}>BLOG</Text>
             <FlatList 
             data={BlogData}
             showsHorizontalScrollIndicator={false}
             keyExtractor={item => `item.${item.id}.title`.toString()}
+            snapToInterval={ITEM_SIZE + ITEM_PADDING}
+            decelerationRate={0}
             horizontal
             renderItem={({ item }) => (
                 <View style={{
-                    paddingHorizontal: widthToDp('1%'),
+                    paddingRight: ITEM_PADDING,
                 }}>
                     <TouchableOpacity style={{
                         justifyContent: 'center',
                         alignItems: 'center',
                     }}
                     onPress={() => navigation.push("BlogDetails", { item })}>
-                        <SharedElement id={`item.${item.id}.title`}>
                         <ImageBackground
                         resizeMode="cover"
                         source={{uri: item.image}} 
                         imageStyle={{borderRadius: 26}}
                         style={{
-                        width: widthToDp('80%'),
+                        width: ITEM_SIZE,
                         height: widthToDp('70%'), 
                         alignItems: 'center',
                         borderRadius: 26,
@@ -45,7 +49,7 @@ const BlogScroll = ({navigation}) => {
                             height: '30%',
                             borderRadius: widthToDp('4%') ,
                             paddingHorizontal: '3%',
-                            backgroundColor: 'rgba(0,0,0,0.05)',
+                            backgroundColor: 'rgba(0,0,0,0.1)',
                             position: 'absolute',
                             alignItems :'center',
                             bottom: heightToDp('1%')
@@ -81,7 +85,6 @@ const BlogScroll = ({navigation}) => {
                             </View>
                         </View>
                         </ImageBackground>
-                        </SharedElement>
                     </TouchableOpacity>
                 </View>
             )}/>
