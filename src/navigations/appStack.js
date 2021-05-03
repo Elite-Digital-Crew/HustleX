@@ -13,6 +13,11 @@ import Discover from '../screens/Discover/discover';
 import Music from '../screens/Music/music';
 import Friends from '../screens/Friends/friends';
 
+//icons
+import Homeicon from '../assets/icons/home.js';
+import Discovericon from '../assets/icons/discover.js';
+import Musicicon from '../assets/icons/music.js';
+import Profileicon from '../assets/icons/profile.js';
 
 //createing stack navigator
 const AppStack = createBottomTabNavigator();
@@ -21,8 +26,9 @@ const AppIndex = () => {
   return (
   <AppStack.Navigator
   tabBarOptions={{
+  showLabel: false,
   activeTintColor: colours.text,
-  inactiveTintColor: colours.darkgrey,
+  inactiveTintColor: '#808080',
   style: {
       backgroundColor: colours.background ,
       height: heightToDp('7%'),
@@ -33,7 +39,7 @@ const AppIndex = () => {
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color }) => (
-            <Ionicons name="home" size={20} color={color} />
+            <Homeicon width={widthToDp('7%')} height={widthToDp('7%')} fill={color}/>
           ),
         }}
       />
@@ -43,12 +49,7 @@ const AppIndex = () => {
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color }) => (
-            <Image
-            style={{
-              height: heightToDp('3%'),
-              width: heightToDp('3%')
-            }} 
-            source={require('../assets/icons/discover.png')}/>
+          <Discovericon width={widthToDp('9%')} height={widthToDp('9%')} fill={color}/>
           ),
         }}/>
       <AppStack.Screen 
@@ -57,12 +58,7 @@ const AppIndex = () => {
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color }) => (
-            <Image
-            style={{
-              height: heightToDp('3%'),
-              width: heightToDp('3%')
-            }} 
-            source={require('../assets/icons/music.png')}/>
+          <Musicicon width={widthToDp('9%')} height={widthToDp('9%')} fill={color}/>
           ),
         }}/>
       <AppStack.Screen 
@@ -71,12 +67,7 @@ const AppIndex = () => {
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color }) => (
-            <Image
-            style={{
-              height: heightToDp('3%'),
-              width: heightToDp('3%')
-            }} 
-            source={require('../assets/icons/profile.png')}/>
+          <Profileicon  width={widthToDp('9%')} height={widthToDp('9%')} fill={color}/>
           ),
         }}/>
   </AppStack.Navigator>

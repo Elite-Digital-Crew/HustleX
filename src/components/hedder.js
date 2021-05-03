@@ -13,7 +13,7 @@ const Hedder = ({navigation}) => {
             justifyContent: 'space-between',
             paddingHorizontal: widthToDp('4%'),
             flexDirection: 'row',
-            backgroundColor: colours.primary
+            // backgroundColor: colours.primary
         }}>
             <TouchableOpacity onPress={() => Alert.alert("Alert", "This feature is not avilable in beta")}>
                 <AntDesign name="search1" size={widthToDp('5%')} color= {colours.text}/>
