@@ -7,8 +7,8 @@ import { widthToDp, heightToDp } from '../Utils';
 //importing screens
 import Home from '../screens/Home/index';
 import Discover from '../screens/Discover/index';
-import Music from '../screens/Music/music';
-import Friends from '../screens/Friends/friends';
+import Music from '../screens/Music/index';
+import Friends from '../screens/Friends/index';
 
 //icons
 import Homeicon from '../assets/icons/home.js';
