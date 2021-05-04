@@ -1,15 +1,12 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { Ionicons } from "@expo/vector-icons";
-
 import React from 'react';
 import colours from '../assets/colours/colours';
 import { widthToDp, heightToDp } from '../Utils';
-import { Image, View } from 'react-native';
 
 //importing screens
 import Home from '../screens/Home/index';
-import Discover from '../screens/Discover/discover';
+import Discover from '../screens/Discover/index';
 import Music from '../screens/Music/music';
 import Friends from '../screens/Friends/friends';
 
