@@ -39,39 +39,39 @@ export const playlistData = [
 export const musicData = [
     {
         id: 1,
-        link: <WebView source={{html: '<iframe src="https://open.spotify.com/embed/track/67BtfxlNbhBmCDR2L2l8qd" width=550 height=100% frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'}}/>,
+        link: <WebView source={{html: '<iframe src="https://open.spotify.com/embed/track/67BtfxlNbhBmCDR2L2l8qd" width="46%" height=100% frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'}}/>,
     },
     {
         id: 2,
-        link:  <WebView source={{html: '<iframe src="https://open.spotify.com/embed/track/2exdDhuNjyxtmJIKkbSWbo" width=550 height=100% frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'}}/>,
+        link:  <WebView source={{html: '<iframe src="https://open.spotify.com/embed/track/2exdDhuNjyxtmJIKkbSWbo" width="46%" height=100% frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'}}/>,
     },
     {
         id: 3,
-        link: <WebView source={{html: '<iframe src="https://open.spotify.com/embed/track/1zLBsSVxETQOfINOLYvT5m" width=550 height=100% frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'}}/>,
+        link: <WebView source={{html: '<iframe src="https://open.spotify.com/embed/track/1zLBsSVxETQOfINOLYvT5m" width="46%" height=100% frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'}}/>,
     },
     {
         id: 4,
-        link: <WebView source={{html: '<iframe src="https://open.spotify.com/embed/track/7hxHWCCAIIxFLCzvDgnQHX" width=550 height=100% frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'}}/>,
+        link: <WebView source={{html: '<iframe src="https://open.spotify.com/embed/track/7hxHWCCAIIxFLCzvDgnQHX" width="46%" height=100% frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'}}/>,
     },
     {
         id: 5,
-        link:  <WebView source={{html: '<iframe src="https://open.spotify.com/embed/track/0VjIjW4GlUZAMYd2vXMi3b" width=550 height=100% frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'}}/>,
+        link:  <WebView source={{html: '<iframe src="https://open.spotify.com/embed/track/0VjIjW4GlUZAMYd2vXMi3b" width="46%" height=100% frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'}}/>,
     },
     {
         id: 6,
-        link: <WebView source={{html: '<iframe src="https://open.spotify.com/embed/track/0yQIhApPPxaPzsgy7FIGnA" width=550 height=100% frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'}}/>,
+        link: <WebView source={{html: '<iframe src="https://open.spotify.com/embed/track/0yQIhApPPxaPzsgy7FIGnA" width="46%" height=100% frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'}}/>,
     },
     {
         id: 7,
-        link: <WebView source={{html: '<iframe src="https://open.spotify.com/embed/track/4918TwZfPrxk8vKhuaqIiq" width=550 height=100% frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'}}/>,
+        link: <WebView source={{html: '<iframe src="https://open.spotify.com/embed/track/4918TwZfPrxk8vKhuaqIiq" width="46%" height=100% frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'}}/>,
     },
     {
         id: 8,
-        link: <WebView source={{html: '<iframe src="https://open.spotify.com/embed/track/2ab4xGVMBb14NpPrj4xDq5" width=550 height=100% frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'}}/>,
+        link: <WebView source={{html: '<iframe src="https://open.spotify.com/embed/track/2ab4xGVMBb14NpPrj4xDq5" width="46%" height=100% frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'}}/>,
     },
     {
         id: 9,
-        link: <WebView source={{html: '<iframe src="https://open.spotify.com/embed/track/16ih0TTm4REIQuYBMPTHm8" width=550 height=100% frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'}}/>,
+        link: <WebView style={{width: '100%'}} source={{html: '<iframe src="https://open.spotify.com/embed/track/16ih0TTm4REIQuYBMPTHm8" width="46%" height=100% frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'}}/>,
     },
 ]
 
