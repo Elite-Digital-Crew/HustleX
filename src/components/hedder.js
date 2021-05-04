@@ -9,6 +9,7 @@ const Hedder = ({navigation}) => {
     return (
         <View style={{
             height: heightToDp('7%'),
+            width: '100%',
             alignItems: 'center',
             justifyContent: 'space-between',
             paddingHorizontal: widthToDp('4%'),

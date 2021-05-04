@@ -1,19 +1,27 @@
 import React from 'react';
 import { Text, View, TouchableOpacity, TextInput, SafeAreaView, ScrollView } from 'react-native';
+
 import colours from '../../assets/colours/colours';
+import { heightToDp, widthToDp } from '../../Utils';
+
+
+import AddStory from '../../components/addStory';
 import Hedder from '../../components/hedder';
+import StoryScroll from '../../components/storyScroll';
 
 
 const Friends = ({ navigation }) => {
     return (
-        <View style={{
+        <SafeAreaView style={{
             flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center'
+            top: heightToDp('2%'),
+            alignItems: 'center',
+            paddingHorizontal: widthToDp('3%')
         }}>
-            <Text>Friends</Text>
             <Hedder navigation={navigation}/>
-        </View>
+            <AddStory />
+            <StoryScroll />
+        </SafeAreaView>
     );
 }
 
