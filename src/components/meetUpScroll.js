@@ -6,10 +6,10 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 import { Ionicons } from '@expo/vector-icons'
 import { widthToDp } from '../Utils'
 import colours from '../assets/colours/colours'
+import MeetUpdata from '../assets/data/meetupdata'
 
-import Storydata from '../assets/data/storyData'
 
-const StoryScroll = () => {
+const MeetUpScroll = () => {
     return (
         <View style={{
             top: 20
@@ -21,57 +21,57 @@ const StoryScroll = () => {
                 fontSize: widthToDp('6%'),
             }}>Friends</Text>
             <FlatList
-            data={Storydata}
+            data={MeetUpdata}
             renderItem={({item}) => (
                 <View style={{
                     alignItems: 'center',
                     marginBottom: 20,
                     width: widthToDp('90%'),
-                    height: widthToDp('64%'),
+                    height: widthToDp('24%'),
                     borderRadius: 30,
                     backgroundColor: colours.grey
                 }}>
                     <Image 
                     style={{
-                        top: '5%',
-                        width: '94%',
-                        height: widthToDp('45%'),
-                        borderRadius: 20
+                        width: widthToDp('12%'),
+                        height: widthToDp('12%'),
+                        position: 'absolute',
+                        left: '4%',
+                        bottom: '32%'
                     }}
-                    source={{uri: item.Image}}
+                    source={require('../assets/images/dummyUser3.png')}
                     />
                     <Image 
                     style={{
-                        width: widthToDp('8%'),
-                        height: widthToDp('8%'),
+                        width: widthToDp('12%'),
+                        height: widthToDp('12%'),
                         position: 'absolute',
                         left: '6%',
-                        bottom: '7%'
+                        bottom: '25%'
                     }}
-                    source={require('../assets/images/dummyUser.png')}
+                    source={require('../assets/images/dummyUser2.png')}
                     />
                     <View style={{
-                        position: 'absolute',
-                        left: '18%',
-                        bottom: '3%'
+                        left: '8%',
+                        top: '16%'
                     }}>
                         <Text style={{
-                            fontFamily: "PoppinsSemiBold",
-                            fontSize: widthToDp('2.5%'),
-                            opacity: 0.5,
-                            color: colours.text
+                            fontFamily: "PoppinsBold",
+                            fontSize: widthToDp('4%')
                         }}>{item.name}</Text>
                         <Text style={{
-                            fontFamily: "PoppinsBold",
-                            fontSize: widthToDp('4%'),
-                            color: colours.text
-                        }}>{item.title}</Text>
+                            fontFamily: "PoppinsMedium",
+                            width: widthToDp('60%'),
+                            fontSize: widthToDp('2.5%')
+                        }}>{item.discription}</Text>
                     </View>
-                    <Ionicons style={{
+                    <Text style={{
                         position: 'absolute',
                         right: '6%',
-                        bottom: '7%'
-                    }} name="heart-outline" color="black" size={widthToDp('6%')}/>
+                        bottom: '12%',
+                        fontFamily: "PoppinsSemiBold",
+                        fontSize: widthToDp('2.5%')
+                    }}>{item.time}</Text>
                 </View>
             )}
             />
@@ -79,4 +79,4 @@ const StoryScroll = () => {
     )
 }
 
-export default StoryScroll;
+export default MeetUpScroll;

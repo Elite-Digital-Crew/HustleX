@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, TouchableOpacity, TextInput, SafeAreaView, ScrollView } from 'react-native';
+import { Text, View, TouchableOpacity, TextInput, SafeAreaView, ScrollView, ScrollViewComponent } from 'react-native';
 
 import colours from '../../assets/colours/colours';
 import { heightToDp, widthToDp } from '../../Utils';
@@ -8,6 +8,7 @@ import { heightToDp, widthToDp } from '../../Utils';
 import AddStory from '../../components/addStory';
 import Hedder from '../../components/hedder';
 import StoryScroll from '../../components/storyScroll';
+import MeetUpScroll from '../../components/meetUpScroll';
 
 
 const Friends = ({ navigation }) => {
@@ -18,9 +19,15 @@ const Friends = ({ navigation }) => {
             alignItems: 'center',
             paddingHorizontal: widthToDp('3%')
         }}>
-            <Hedder navigation={navigation}/>
-            <AddStory />
-            <StoryScroll />
+            <ScrollView style={{
+                flex: 1,
+                width: '100%',
+            }}> 
+                <Hedder navigation={navigation}/>
+                <AddStory />
+                <StoryScroll />
+                <MeetUpScroll />
+            </ScrollView>
         </SafeAreaView>
     );
 }
