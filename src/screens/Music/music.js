@@ -38,7 +38,7 @@ const Music = ({ navigation }) => {
                     renderItem={({item}) => (
                         <View style={{
                             width: '33%',
-                            height: widthToDp('30%'),
+                            height: widthToDp('26%'),
                             padding: 4,
                             paddingHorizontal: 6
                         }}>

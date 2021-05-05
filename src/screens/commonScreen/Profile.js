@@ -1,9 +1,10 @@
 import React from 'react'
-import { View, Text, TouchableHighlight, Image, SafeAreaView } from 'react-native'
+import { View, Text, TouchableOpacity, Image, SafeAreaView } from 'react-native'
 import colours from '../../assets/colours/colours'
 import { heightToDp, widthToDp } from '../../Utils'
+import { Ionicons } from '@expo/vector-icons';
 
-function Profile() {
+function Profile({navigation}) {
     return (
         <SafeAreaView style={{
             flex: 1,
@@ -33,6 +34,20 @@ function Profile() {
                     fontSize: widthToDp('4%')
                 }}>Fitness Freek</Text>
             </View>
+            <TouchableOpacity 
+            onPress={() => navigation.goBack()}
+            style={{
+                position: 'absolute',
+                width: widthToDp('10%'),
+                height : widthToDp('10%'),
+                justifyContent: 'center',
+                alignItems: 'center',
+                top: 40,
+                left: 20,
+                borderRadius: 40,
+            }}>
+                <Ionicons name="chevron-back-outline" size={widthToDp('8%')} color="black" />
+            </TouchableOpacity>
             <View style={{
                 backgroundColor: colours.darkgrey,
                 flexDirection: 'row',
@@ -71,8 +86,8 @@ function Profile() {
             <Image 
             resizeMode="cover"
             style={{
-                width: '90%',
-                // aspectRatio: 0.5
+                width: 480,
+                height: 250,
             }}
             source={require('../../assets/images/activity.png')}
             />

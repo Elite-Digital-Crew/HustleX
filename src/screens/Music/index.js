@@ -1,14 +1,12 @@
 import React from 'react';
-import { enableScreens } from 'react-native-screens';
-import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
-
-enableScreens();
+import { createStackNavigator } from '@react-navigation/stack';
 
 // screens
 import Music from './music';
 import Profile from '../commonScreen/Profile';
 
-const Stack = createSharedElementStackNavigator()
+
+const Stack = createStackNavigator()
 
 export default function Index({ navigation }) {
      return(

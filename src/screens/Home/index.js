@@ -1,8 +1,6 @@
 import React from 'react';
-import { enableScreens } from 'react-native-screens';
-import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
+import { createStackNavigator } from '@react-navigation/stack';
 
-enableScreens();
 
 // screens
 import Home from './home';
@@ -10,7 +8,7 @@ import Profile from '../commonScreen/Profile';
 import BlogDetails from '../commonScreen/BlogDetails';
 import EventsDetails from '../commonScreen/EventsDetails';
 
-const Stack = createSharedElementStackNavigator()
+const Stack = createStackNavigator()
 
 export default function Index({ navigation }) {
      return(
