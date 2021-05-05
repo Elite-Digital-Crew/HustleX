@@ -12,7 +12,7 @@ const addStory = () => {
     <View style={{
         justifyContent: 'space-between',
         alignItems: 'center',
-        width: '94%',
+        width: '100%',
         flexDirection: 'row'
     }}>
         <Image 

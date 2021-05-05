@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, TouchableOpacity, TextInput, SafeAreaView, ScrollView, ScrollViewComponent } from 'react-native';
+import { Text, View, TouchableOpacity, TextInput, SafeAreaView, ScrollView, ScrollViewComponent, StatusBar } from 'react-native';
 
 import colours from '../../assets/colours/colours';
 import { heightToDp, widthToDp } from '../../Utils';
@@ -16,13 +16,9 @@ const Friends = ({ navigation }) => {
         <SafeAreaView style={{
             flex: 1,
             top: heightToDp('2%'),
-            alignItems: 'center',
             paddingHorizontal: widthToDp('3%')
         }}>
-            <ScrollView style={{
-                flex: 1,
-                width: '100%',
-            }}> 
+            <ScrollView showsVerticalScrollIndicator={false}> 
                 <Hedder navigation={navigation}/>
                 <AddStory />
                 <StoryScroll />

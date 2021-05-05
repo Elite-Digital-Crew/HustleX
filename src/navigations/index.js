@@ -4,11 +4,13 @@ import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import AppStack from './appStack';
 import AuthStack from './authStack';
 
+import colours from '../assets/colours/colours';
+
 const MyTheme = {
     ...DefaultTheme,
     colors: {
         ...DefaultTheme.colors,
-        background : 'rgb(255, 255, 255)',
+        background : colours.background,
     },
 };
 

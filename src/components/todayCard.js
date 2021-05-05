@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
 
     todayWrapper: {
       backgroundColor: colours.grey,
-      width: widthToDp('90%'),
+      width: '100%',
       height: widthToDp('50%'),
       borderRadius: widthToDp('5%')
     },

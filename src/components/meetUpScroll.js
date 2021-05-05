@@ -12,11 +12,12 @@ import MeetUpdata from '../assets/data/meetupdata'
 const MeetUpScroll = () => {
     return (
         <View style={{
-            top: 20
+            top: 40
         }}>
             <Text style={{
                 color: colours.text,
                 left: '2%',
+                bottom: 10,
                 fontFamily: "PoppinsBold",
                 fontSize: widthToDp('6%'),
             }}>Friends</Text>
@@ -26,7 +27,7 @@ const MeetUpScroll = () => {
                 <View style={{
                     alignItems: 'center',
                     marginBottom: 20,
-                    width: widthToDp('90%'),
+                    width: '100%',
                     height: widthToDp('24%'),
                     borderRadius: 30,
                     backgroundColor: colours.grey
