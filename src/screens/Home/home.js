@@ -10,13 +10,8 @@ import { heightToDp, widthToDp } from '../../Utils';
 import Button from '../../components/button'
 import Hedder from '../../components/hedder';
 import BlogScroll from '../../components/blogScroll';
-import EventsScroll from '../../components/eventsScrool';
-import PieChart from '../../components/pieChart'
-import Homeicon from '../../assets/icons/home';
-import Discover from '../../assets/icons/discover';
-import Music from '../../assets/icons/music';
-import Profile from '../../assets/icons/profile';
 import TodayCard from '../../components/todayCard';
+import CoursesScroll from '../../components/coursesScroll';
 
 const Home = ({ navigation }) => {
  
@@ -26,12 +21,14 @@ const Home = ({ navigation }) => {
             top: heightToDp('2%'),
             paddingHorizontal: widthToDp('3%')
         }}>
-            <StatusBar translucent backgroundColor="transparent" barStyle="dark-content" />
-            <Hedder navigation={navigation}/>
-            <TodayCard />
-            <BlogScroll navigation={navigation}/>
-            {/* <EventsScroll navigation={navigation}/> */}
-            {/* <PieChart /> */}
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <StatusBar translucent backgroundColor="transparent" barStyle="dark-content" />
+                <Hedder navigation={navigation}/>
+                <TodayCard />
+                <CoursesScroll navigation={navigation}/>
+                <BlogScroll navigation={navigation}/>
+                <View style={{height: heightToDp('6%')}}></View>
+            </ScrollView>
         </SafeAreaView>
     );
 }

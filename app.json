@@ -23,7 +23,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/app-assets/adaptive-icon.png",
         "backgroundColor": "#F8F8FA"
-      }
+      },
+      "package": "com.hustlex"
     },
     "web": {
       "favicon": "./assets/favicon.png"
