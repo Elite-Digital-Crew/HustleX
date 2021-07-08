@@ -18,8 +18,8 @@ const MyTheme = {
 const NavigationIndex = () => {
     return(
         <NavigationContainer theme={MyTheme}>
-            {/* <AuthStack /> */}
-            <AppStack />
+            <AuthStack />
+            {/* <AppStack /> */}
         </NavigationContainer>
     );
 }
